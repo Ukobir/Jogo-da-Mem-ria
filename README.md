@@ -9,10 +9,8 @@
 </h1>
 
 ## Descrição
-
-
-
-## Como Executar
+O jogo da memória é composto por 2 estágios. Na primeira parte (onde o programa inicia), é uma introdução ao jogo onde o usuário interage com o joystick e com os Botões A e B, que são os controles do jogo. Ao movimentar o Joystick, é possível selecionar uma cor indicada tanto pela Matriz de LEDs, quanto pelo LED RGB e neste momento um barulho é produzido pelo Buzzer correspondente a tal cor. No total são cinco cores e sons diferentes que o jogador deve memorizar para vencer. Paralelo a isto, o display cumpre a funcionalidade obrigatória exibindo um quadrado de 8x8 pixels, que se move proporcionalmente aos valores capturados pelo Joystick. E no terminal USB é utilizado para passar informações ao jogador.
+Já a segunda parte é ativada ao apertar o Botão A, nela é onde o jogo começa (se for apertado o B entra no modo Bootsel). De início, o jogo repete uma das cores na Matriz de LEDs e seu barulho com o Buzzer e pede ao jogador que selecione qual a cor e som que foi demonstrado utilizando o Joystick. Feito isso, é necessário apertar o Botão A que agora passa a confirmar a sua escolha e seguir para a próxima fase. Agora ao apertar o Botão B o usuário volta a tela ou fase anterior. Neste estágio o display não mais captura o movimento do joystick mas informa o jogador em conjunto com o terminal USB.
 
 ### Pré-requisitos
 
@@ -36,5 +34,5 @@
 Foi feito diversos testes para garantir a funcionamento devido da atividade. Além de que foi organizado o código conforme explicado em aula.
 
 ## Vídeo de Demonstração
-
+[Link do Vídeo](https://drive.google.com/file/d/16VAGrl-QEkwZkmLuySFhR5sHkDaztG20/view?usp=sharing)
 
