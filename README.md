@@ -7,7 +7,6 @@
   Atividade de Revisão
   <br>
 </h1>
-<div align="center">
 
 ## Descrição
 
