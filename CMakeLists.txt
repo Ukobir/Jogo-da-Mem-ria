@@ -1,3 +1,17 @@
+# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
+if(WIN32)
+    set(USERHOME $ENV{USERPROFILE})
+else()
+    set(USERHOME $ENV{HOME})
+endif()
+set(sdkVersion 2.1.1)
+set(toolchainVersion 14_2_Rel1)
+set(picotoolVersion 2.1.1)
+set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+if (EXISTS ${picoVscode})
+    include(${picoVscode})
+endif()
+# ====================================================================================
 
 
 
@@ -13,8 +27,9 @@ project(Teste_ADC_Display C CXX ASM)
 pico_sdk_init()
 
 
+
 add_executable(${PROJECT_NAME}  
-        ADC_DisplayC.c # Código principal em C
+        Jogo_Memoria.c # Código principal em C
         lib/ssd1306.c # Biblioteca para o display OLED
         )
 
@@ -22,11 +37,23 @@ target_link_libraries(${PROJECT_NAME}
         pico_stdlib 
         hardware_i2c
         hardware_adc
+        hardware_pio
+        hardware_pwm
         )
 
 pico_enable_stdio_usb(${PROJECT_NAME} 1)
 pico_enable_stdio_uart(${PROJECT_NAME} 0)
 
+#Converte o .pio para .h
+pico_generate_pio_header(${PROJECT_NAME}  ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
+
+target_sources(${PROJECT_NAME} PRIVATE Jogo_Memoria.c)
+
 pico_add_extra_outputs(${PROJECT_NAME})
+
+
+
+
+
 
 
